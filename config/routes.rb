@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   get '/random_greeting', to: 'greetings#random_greeting'
-  root 'static#index'
+  root 'root#index'
 end
