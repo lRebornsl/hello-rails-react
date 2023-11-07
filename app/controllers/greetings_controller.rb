@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Controller
 class GreetingsController < ApplicationController
   def random_greeting
