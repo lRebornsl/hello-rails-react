@@ -2,7 +2,7 @@ import { createAsyncThunk, createReducer } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const GET_GREETINGS = "appStore/greetings/GET_GREETINGS"
-const URL = ""
+const URL = "/random_greeting"
 
 export const getGreetings = createAsyncThunk(GET_GREETINGS, () => {
   return axios.get(URL)
@@ -10,7 +10,7 @@ export const getGreetings = createAsyncThunk(GET_GREETINGS, () => {
 });
 
 const initialState = {
-  greetings: []
+  greetings: null,
 };
 
 const appSlice = createReducer(initialState, builder => {
@@ -18,7 +18,7 @@ const appSlice = createReducer(initialState, builder => {
     .addCase(getGreetings.fulfilled, (state, { payload }) => {
       return{
         ...state,
-        places: [...payload],
+        greetings: payload,
       }
     })
 })
