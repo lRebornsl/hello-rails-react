@@ -1,0 +1,3 @@
+# Controller
+module ApplicationHelper
+end
